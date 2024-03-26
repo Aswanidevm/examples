@@ -21,4 +21,5 @@ RUN gcloud -q components install gke-gcloud-auth-plugin
 
 ENV PATH=/builder/helm/:$PATH
 
+
 ENTRYPOINT ["/builder/helm.bash"]
