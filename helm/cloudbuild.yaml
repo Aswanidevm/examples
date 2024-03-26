@@ -1,24 +1,24 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'  # Use the official gcloud builder image
-    id: Post-build steps
-    entrypoint: /bin/bash
-    args: 
-      - -c
-      - |
-        pwd
-        ls -al
+  # - name: 'gcr.io/cloud-builders/gcloud'  # Use the official gcloud builder image
+  #   id: Post-build steps
+  #   entrypoint: /bin/bash
+  #   args: 
+  #     - -c
+  #     - |
+  #       pwd
+  #       ls -al
   #       gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'cd deploymentscripts/ && rm -rf $BUILD_ID && ls'  --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no      
 
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-f', workspace/examples/helm/ ' ,'--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:${_HELM_VERSION}', '--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest', '--build-arg', 'HELM_VERSION=v${_HELM_VERSION}', './helm/']
-# # Sanity Check: make sure basic functionality works
-# - name: 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest'
-#   args: ['version', '--client']
-#   env:
-#     - SKIP_CLUSTER_CONFIG=true
-# images:
-#   - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:${_HELM_VERSION}'
-#   - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest'
-# tags: ['helm-demo']
-# substitutions:
-#   _HELM_VERSION: 3.14.3
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-f', './helm/ ' ,'--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:${_HELM_VERSION}', '--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest', '--build-arg', 'HELM_VERSION=v${_HELM_VERSION}', './helm/']
+# Sanity Check: make sure basic functionality works
+- name: 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest'
+  args: ['version', '--client']
+  env:
+    - SKIP_CLUSTER_CONFIG=true
+images:
+  - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:${_HELM_VERSION}'
+  - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest'
+tags: ['helm-demo']
+substitutions:
+  _HELM_VERSION: 3.14.3
