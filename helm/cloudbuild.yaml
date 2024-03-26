@@ -7,7 +7,7 @@ steps:
   #     - |
   #       pwd
   #       ls -al
-  #       gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'cd deploymentscripts/ && rm -rf $BUILD_ID && ls'  --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no      
+  
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-f', './helm' ,'--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:${_HELM_VERSION}', '--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest', '--build-arg', 'HELM_VERSION=v${_HELM_VERSION}', './helm']
