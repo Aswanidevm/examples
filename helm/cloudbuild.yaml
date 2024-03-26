@@ -6,7 +6,7 @@ steps:
   #     - -c
   #     - |
   #       pwd
-  #       ls -al
+
   
 
 - name: 'gcr.io/cloud-builders/docker'
