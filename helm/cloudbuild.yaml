@@ -3,7 +3,6 @@ steps:
     id: Post-build steps
     entrypoint: /bin/bash
     args: 
-      - -c
       - pwd
   #       gcloud compute ssh ftwomicroinstance --zone=asia-south1-a --project jmc-devsecops --command 'cd deploymentscripts/ && rm -rf $BUILD_ID && ls'  --tunnel-through-iap --force-key-file-overwrite --strict-host-key-checking=no      
 
