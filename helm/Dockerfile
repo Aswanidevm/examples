@@ -4,7 +4,7 @@ ARG HELM_VERSION
 ENV HELM_VERSION=$HELM_VERSION
 ENV USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
-COPY helm.bash /builder/helm.bash
+COPY ./helm/helm.bash /builder/helm.bash
 
 RUN chmod +x /builder/helm.bash && \
   mkdir -p /builder/helm && \
