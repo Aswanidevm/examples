@@ -5,14 +5,14 @@ if [[ $(kubectl config current-context 2> /dev/null) == "" && "$SKIP_CLUSTER_CON
     # This tries to read environment variables. If not set, it grabs from gcloud
     cluster=${CLOUDSDK_CONTAINER_CLUSTER:-$(gcloud config get-value container/cluster 2> /dev/null)}
     region=${CLOUDSDK_COMPUTE_REGION:-$(gcloud config get-value compute/region 2> /dev/null)}
-#    zone=${CLOUDSDK_COMPUTE_ZONE:-$(gcloud config get-value compute/zone 2> /dev/null)}
+    zone=${CLOUDSDK_COMPUTE_ZONE:-$(gcloud config get-value compute/zone 2> /dev/null)}
     project=${GCLOUD_PROJECT:-$(gcloud config get-value core/project 2> /dev/null)}
 
     function var_usage() {
         cat <<EOF
 No cluster is set. To set the cluster (and the region/zone where it is found), set the environment variables
   CLOUDSDK_COMPUTE_REGION=<cluster region> (regional clusters)
-#  CLOUDSDK_COMPUTE_ZONE=<cluster zone> (zonal clusters)
+  CLOUDSDK_COMPUTE_ZONE=<cluster zone> (zonal clusters)
   CLOUDSDK_CONTAINER_CLUSTER=<cluster name>
 EOF
         exit 1
