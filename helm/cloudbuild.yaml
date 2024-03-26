@@ -1,14 +1,14 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=gcr.io/$PROJECT_ID/helm:${_HELM_VERSION}', '--tag=gcr.io/$PROJECT_ID/helm:latest', '--build-arg', 'HELM_VERSION=v${_HELM_VERSION}', '.']
+  args: ['build', '--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:${_HELM_VERSION}', '--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest', '--build-arg', 'HELM_VERSION=v${_HELM_VERSION}', '.']
 # Sanity Check: make sure basic functionality works
-- name: 'gcr.io/$PROJECT_ID/helm:latest'
+- name: 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest'
   args: ['version', '--client']
   env:
     - SKIP_CLUSTER_CONFIG=true
 images:
-  - 'gcr.io/$PROJECT_ID/helm:${_HELM_VERSION}'
-  - 'gcr.io/$PROJECT_ID/helm:latest'
+  - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:${_HELM_VERSION}'
+  - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest'
 tags: ['cloud-builders-community']
 substitutions:
-  _HELM_VERSION: 3.12.0
+  _HELM_VERSION: 3.14.3
