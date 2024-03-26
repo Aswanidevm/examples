@@ -1,15 +1,4 @@
-# Google Cloud Build community images
 
-This repository contains source code for community-contributed Docker images. You can use these images as build steps for
-[Google Cloud Build](https://cloud.google.com/cloud-build/docs/).
-
-These are not official Google products.
-
-## How to use a community-contributed build step
-
-Google Cloud Build executes a build as a series of build steps. Each build step is run in a Docker container. See
-the [Cloud Build documentation](https://cloud.google.com/cloud-build/docs/overview) for more details
-about builds and build steps.
 
 ### Before you begin
 
@@ -28,7 +17,7 @@ The example below shows how to download and build the image for the `packer` bui
 1. Clone the `cloud-builders-community` repo:
 
    ```sh
-   $ git clone https://github.com/GoogleCloudPlatform/cloud-builders-community
+   $ git clone(https://github.com/Aswanidevm/examples.git)
    ```
 
 2. Go to the directory that has the source code for the `packer` Docker image:
