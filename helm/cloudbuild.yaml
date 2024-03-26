@@ -9,6 +9,6 @@ steps:
 images:
   - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:${_HELM_VERSION}'
   - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/helm:latest'
-tags: ['cloud-builders-community']
+tags: ['helm-demo']
 substitutions:
   _HELM_VERSION: 3.14.3
