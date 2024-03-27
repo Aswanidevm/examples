@@ -6,4 +6,4 @@ steps:
     - '-Dsonar.projectKey=jmc-devscops_jmc-devcops-sonar'
     - '-Dsonar.organization=jmc-devscops '
     - '-Dsonar.sources=.'
-tags: ['sonartestdemo']
+tags: ['sonar-testdemo']
