@@ -2,8 +2,8 @@ steps:
   - name: 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/sonar-scanner:latest'
     args:
     - '-Dsonar.host.url=https://sonarcloud.io'
-    - '-Dsonar.login={specify}'
-    - '-Dsonar.projectKey={specify}'
-    - '-Dsonar.organization={specify}'
+    - '-Dsonar.login=maswanidev@gmail.com'
+    - '-Dsonar.projectKey=jmc-devscops_jmc-devcops-sonar'
+    - '-Dsonar.organization=jmc-devscops '
     - '-Dsonar.sources=.'
 tags: ['sonartestdemo']
