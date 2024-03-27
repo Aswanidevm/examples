@@ -18,7 +18,9 @@ RUN apt-get update \
 	&& curl -L --silent ${SONAR_SCANNER_CLI_DOWNLOAD_URL} >  /tmp/sonar-scanner/sonar-scanner-cli-${SONARQUBE_SCANNER_CLI_VERSION}-linux.zip  \
     && mkdir -p /opt  \
 	&& unzip /tmp/sonar-scanner/sonar-scanner-cli-${SONARQUBE_SCANNER_CLI_VERSION}-linux.zip -d /opt  \
-	&& rm -rf /tmp/sonar-scanner
+	&& rm -rf /tmp/sonar-scanner \
+	&& pwd \
+	&& ls \
 
 
 ENV PATH $PATH:$SONARQUBE_SCANNER_BIN
