@@ -20,12 +20,13 @@ RUN apt-get update \
 	&& unzip /tmp/sonar-scanner/sonar-scanner-cli-${SONARQUBE_SCANNER_CLI_VERSION}-linux.zip -d /opt  \
 	&& rm -rf /tmp/sonar-scanner \
 	&& pwd \
-	&& ls \
+	&& ls
 
 
 ENV PATH $PATH:$SONARQUBE_SCANNER_BIN
 
-COPY +x launch.sh /
+COPY launch.sh /
+
 
 WORKDIR ${SONARQUBE_SCANNER_HOME}
 
