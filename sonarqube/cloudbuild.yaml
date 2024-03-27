@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-f', './sonarqube/Dockerfile' ,'--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/sonar-scanner:${_SONARQUBE_SCANNER_CLI_VERSION}', '--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/sonar-scanner:latest', './sonar-scanner']
+  args: ['build', '-f', './sonarqube/Dockerfile' ,'--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/sonar-scanner:${_SONARQUBE_SCANNER_CLI_VERSION}', '--tag=asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/sonar-scanner:latest', './sonarqube']
   # args: 
   # - 'build'
   # - '--build-arg'
@@ -14,6 +14,7 @@ steps:
 images: 
 - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/sonar-scanner:latest'
 - 'asia-south1-docker.pkg.dev/jmc-devsecops/hello-test/sonar-scanner:${_SONARQUBE_SCANNER_CLI_VERSION}'
+
 
 tags: ['sonardemo']
 substitutions:
