@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-LABEL maintainer "Ram Gopinathan"
+
 
 ARG SONARQUBE_SCANNER_CLI_VERSION="4.6.0.2311"
 
