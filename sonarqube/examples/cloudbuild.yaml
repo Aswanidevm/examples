@@ -4,6 +4,6 @@ steps:
     - '-Dsonar.host.url=https://sonarcloud.io'
     - '-Dsonar.login=maswanidev@gmail.com'
     - '-Dsonar.projectKey=jmc-devscops_jmc-devcops-sonar'
-    - '-Dsonar.organization=jmc-devscops '
+    - '-Dsonar.organization=jmc-devscops'
     - '-Dsonar.sources=.'
 tags: ['sonar-testdemo']
