@@ -26,7 +26,7 @@ RUN apt-get update \
 ENV PATH $PATH:$SONARQUBE_SCANNER_BIN
 
 COPY launch.sh /
-
+RUN  chmod 777 /launch.sh
 
 WORKDIR ${SONARQUBE_SCANNER_HOME}
 
