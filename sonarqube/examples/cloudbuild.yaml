@@ -5,5 +5,5 @@ steps:
     - '-Dsonar.login=da66198d0d030d6f34cf8492403c0b4645884e37'
     - '-Dsonar.projectKey=jmc-devscops_jmc-devcops-sonar'
     - '-Dsonar.organization=jmc-devscops'
-    - '-Dsonar.sources=.'
+    - '-Dsonar.sources=./sonarqube'
 tags: ['sonartestdemo']
